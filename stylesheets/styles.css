@@ -287,9 +287,10 @@ footer {
 #mc_embed_signup input:focus {
   border-color:#333;
 }
-#mc_embed_signup .button {
+
+#mc_embed_signup .button, #donateButton{
   clear:both; 
-  background-color: #777; 
+  background-color: #39c; 
   border: 0 none; 
   border-radius:4px; 
   letter-spacing:.03em; 
@@ -307,8 +308,8 @@ footer {
   width: auto; 
   transition: all 0.23s ease-in-out 0s;}
 
-#mc_embed_signup .button:hover {
-  background-color:#494949;
+#mc_embed_signup .button:hover, #donateButton:hover {
+  background-color:#777;
 }
 
 #mc_embed_signup .small-meta {
@@ -385,4 +386,5 @@ footer {
   width:auto; 
   margin-left:1.05em; 
   text-align:left; 
-  padding:.5em 0;}
+  padding:.5em 0;
+}
