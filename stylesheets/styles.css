@@ -269,7 +269,7 @@ input#donation-amount.form-control{
 
 input#special-instructions.form-control{
   display:block;
-  padding-left: 8.11px; 
+  margin: 10px 0 8.11px 10px;
   height:24px; 
   width:150px; 
   -webkit-border-radius: 3px; 
@@ -301,7 +301,6 @@ button#donationButton.btn.btn-primary {
   white-space: nowrap; 
   width: auto; 
   transition: all 0.23s ease-in-out 0s;
-  margin: 10px 0;
 }
 
 button#donation-button.btn.btn-primary:hover{
