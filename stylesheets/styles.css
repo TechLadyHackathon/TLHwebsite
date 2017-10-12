@@ -258,6 +258,10 @@ footer {
   }
 }
 
+#donation-amount {
+  width: 50px;
+}
+
 /*Mailchimp signup*/
 /*modified from default styles*/
 #mc_embed_signup {
@@ -288,7 +292,7 @@ footer {
   border-color:#333;
 }
 
-#mc_embed_signup .button, #donateButton{
+#mc_embed_signup .button, #donationButton{
   clear:both; 
   background-color: #39c; 
   border: 0 none; 
@@ -308,7 +312,7 @@ footer {
   width: auto; 
   transition: all 0.23s ease-in-out 0s;}
 
-#mc_embed_signup .button:hover, #donateButton:hover {
+#mc_embed_signup .button:hover, #donationButton:hover {
   background-color:#777;
 }
 
@@ -387,9 +391,4 @@ footer {
   margin-left:1.05em; 
   text-align:left; 
   padding:.5em 0;
-}
-
-#donateButton {
-  display:block; 
-  width: 200px;
 }
