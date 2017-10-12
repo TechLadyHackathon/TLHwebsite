@@ -260,7 +260,6 @@ footer {
 
 
 input#donation-amount.form-control{
-  display:block; 
   height:24px; 
   width:50px; 
   -webkit-border-radius: 3px; 
@@ -268,7 +267,7 @@ input#donation-amount.form-control{
   border-radius: 3px;
 }
 
-input#special-instructions.form.control{
+input#special-instructions.form-control{
   display:block;
   padding-left: 8.11px; 
   height:24px; 
@@ -278,7 +277,15 @@ input#special-instructions.form.control{
   border-radius: 3px;
 }
 
-button#donation-button.btn.btn-primary {
+span.income-group-addon {
+  height: 24px;
+}
+
+span#basic-addon1.income-group-addon {
+  height: 24px;
+}
+
+button#donationButton.btn.btn-primary {
   background-color: #39c; 
   border: 0 none; 
   border-radius:4px; 
@@ -294,6 +301,7 @@ button#donation-button.btn.btn-primary {
   white-space: nowrap; 
   width: auto; 
   transition: all 0.23s ease-in-out 0s;
+  margin: 10px 0;
 }
 
 button#donation-button.btn.btn-primary:hover{
