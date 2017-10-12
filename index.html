@@ -38,8 +38,101 @@ Tech Lady Hackathon was founded in 2013 by <a href="http://twitter.com/leahbanno
 Reach out to this year's organizers, <a href="https://twitter.com/AyRenay">Alexis Johnson-Gresham</a>, <a href="https://twitter.com/jessicagarson">Jessica Garson</a>, <a href="https://twitter.com/joymwhitt">Joy Whitt</a>, or <a href="https://twitter.com/dataKateR">Kate Rabinowitz</a> for questions or ideas about this year's hackathon.</p>
 
 <h3>2017 Sponsors</h3>
-<p>Tech Lady Hackathon is made possible through generous donations. Donations are tax deductible. Companies should contact <a href="https://twitter.com/jessicagarson">Jessica Garson</a> to learn more about supporting Tech Lady and reaching our community. Tech Lady now also accepts donations from our community.
+<p>Tech Lady Hackathon is made possible through generous donations. Donations are tax deductible. Companies should contact <a href="https://twitter.com/jessicagarson">Jessica Garson</a> to learn more about supporting Tech Lady and reaching our community.</p> 
 <br>
 <img src="images/2017_TLH_Sponsors.png" width="500">
+
+<p>Tech Lady now also accepts donations from our community.</p>
+<br>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<form>
+  <div class="form-group">
+    <label for="donation-amount"><strong>Amount</strong></label>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">$</span>
+      <input type="number" id="donation-amount" class="form-control" value="25" aria-label="Amount (to the nearest dollar)">
+      <span class="input-group-addon">.00</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="special-instructions"><strong>Special Instructions</strong></label>
+    <input type="text" class="form-control" id="special-instructions" placeholder="">
+  </div>
+
+  <button type="submit" class="btn btn-primary" id="donationButton">Make donation</button>
+</form>
+
+<script>
+var apiKey;
+var account;
+
+if (window.location.hostname === 'localhost') {
+  // Check to see if we are working locally and should use test data.
+  apiKey = 'pk_test_xNRNG2yhQBWXuqNaXyeEMgCo';
+  account = 'test';
+} else {
+  // Use the live key.
+  // Stripe is fine with publishing the *public* API key. There's a separate
+  // secret one that allows for the actual charging of cards and such.
+  apiKey = 'pk_live_t544EMRV55N0hw6a6dGSPpJs';
+  account = 'techlady';
+}
+
+var handler = StripeCheckout.configure({
+  key: apiKey,
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+    var amount = Number(document.getElementById('donation-amount').value + "00")
+    var instruction = document.getElementById('special-instructions').value
+    // Send a request to our AWS Lambda function, which handles the
+    // secret Stripe stuff.
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/stripe-processor', true);
+    xhr.setRequestHeader("Content-type", "application/json");
+
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+        console.log(200);
+        console.log(xhr);
+        // Request finished.
+      } else {
+        console.log('not 200');
+        console.log(xhr);
+      }
+    }
+    xhr.send(
+      JSON.stringify({
+        "token": token.id,
+        "amount": amount,
+        "instruction": instruction,
+        "email": token.email,
+        "account": account
+      })
+  );
+  }
+});
+
+document.getElementById('donationButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'Tech Lady Hackathon',
+    description: 'Donation',
+    amount: Number(document.getElementById('donation-amount').value + "00"),
+    allowRememberMe: false
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
 
 See <a href="/donors.html">sponsors from previous years.</a></p>
