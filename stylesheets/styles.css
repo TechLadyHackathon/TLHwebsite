@@ -187,6 +187,34 @@ footer {
   bottom:50px;
 }
 
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul {
+  margin: 0;
+  padding: 0 5px;
+}
+
+.speaker {
+  padding-left: 15px;
+}
+
+.time {
+  margin-bottom: 5px;
+}
+
+.smallOnly {
+  margin: 5px 0 0 0;
+}
+
 @media print, screen and (max-width: 960px) {
 
   div.wrapper {
@@ -258,6 +286,25 @@ footer {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .largeOnly {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+  .column {
+    width: 100%;
+}
+}
+
+@media screen and (min-width: 481px) {
+  .smallOnly {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+}
+
 
 input#donation-amount.form-control{
   height:24px; 
@@ -269,7 +316,7 @@ input#donation-amount.form-control{
 
 input#special-instructions.form-control{
   display:block;
-  margin: 10px 0 8.11px 10px;
+  margin: 10px;
   height:24px; 
   width:150px; 
   -webkit-border-radius: 3px; 
@@ -294,16 +341,17 @@ button#donationButton.btn.btn-primary {
   cursor: pointer; 
   display: inline-block; 
   height: 24px; 
+  width: 100px;
   line-height: 24px; 
   text-align: center; 
   text-decoration: none; 
-  vertical-align: top; 
+  vertical-align: center; 
   white-space: nowrap; 
-  width: auto; 
   transition: all 0.23s ease-in-out 0s;
+  margin-left:10px;
 }
 
-button#donation-button.btn.btn-primary:hover{
+#donation-button:hover{
   background-color:#777;
 }
 
