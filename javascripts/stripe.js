@@ -1,7 +1,7 @@
 var apiKey;
 var account;
 
-if (window.location.hostname === 'localhost') {
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
   // Check to see if we are working locally and should use test data.
   apiKey = 'pk_test_xNRNG2yhQBWXuqNaXyeEMgCo';
   account = 'test';
@@ -24,29 +24,20 @@ var handler = StripeCheckout.configure({
     var instruction = document.getElementById('special-instructions').value
     // Send a request to our AWS Lambda function, which handles the
     // secret Stripe stuff.
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", 'https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/stripe-processor', true);
-    xhr.setRequestHeader("Content-type", "application/json");
-
-    xhr.onreadystatechange = function() {
-      if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-        console.log(200);
-        console.log(xhr);
-        // Request finished.
+    let send = JSON.stringify({
+      "token": token.id,
+      "amount": amount,
+      "instruction": instruction,
+      "email": token.email,
+      "account": account
+    });
+    $.post("https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/stripe-processor", send, function(data, status){
+      if (data.chargeSuccess) {
+        $('#donation-form').before('<p class="alert alert-success" id="donation-status" role="alert">'+data.message+'</p>')
       } else {
-        console.log('not 200');
-        console.log(xhr);
+        $('#donation-form').before('<p class="alert alert-warning" id="donation-status" role="alert">'+data.message+'</p>')
       }
-    }
-    xhr.send(
-      JSON.stringify({
-        "token": token.id,
-        "amount": amount,
-        "instruction": instruction,
-        "email": token.email,
-        "account": account
-      })
-  );
+    });
   }
 });
 
