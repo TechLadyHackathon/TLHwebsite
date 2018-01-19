@@ -3,14 +3,14 @@ var account;
 
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
   // Check to see if we are working locally and should use test data.
-  apiKey = 'pk_test_xNRNG2yhQBWXuqNaXyeEMgCo';
+  apiKey = 'pk_test_VC5uJQS56X7KH2ja3FNG34Xm';
   account = 'test';
 } else {
   // Use the live key.
   // Stripe is fine with publishing the *public* API key. There's a separate
   // secret one that allows for the actual charging of cards and such.
   apiKey = 'pk_live_t544EMRV55N0hw6a6dGSPpJs';
-  account = 'techlady';
+  account = 'live';
 }
 
 var handler = StripeCheckout.configure({
@@ -31,7 +31,7 @@ var handler = StripeCheckout.configure({
       "email": token.email,
       "account": account
     });
-    $.post("https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/stripe-processor", send, function(data, status){
+    $.post("https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/techlady-stripe-processor", send, function(data, status){
       if (data.chargeSuccess) {
         $('#donation-form').before('<p class="alert alert-success" id="donation-status" role="alert">'+data.message+'</p>')
       } else {
