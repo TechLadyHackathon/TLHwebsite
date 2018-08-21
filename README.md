@@ -1,2 +1,2 @@
 # website
-techladyhackathon.org
+www.techladyhackathon.org
