@@ -307,20 +307,20 @@ ul {
 
 
 input#donation-amount.form-control{
-  height:24px; 
-  width:50px; 
-  -webkit-border-radius: 3px; 
-  -moz-border-radius: 3px; 
+  height:24px;
+  width:50px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
 input#special-instructions.form-control{
   display:block;
   margin: 10px;
-  height:24px; 
-  width:150px; 
-  -webkit-border-radius: 3px; 
-  -moz-border-radius: 3px; 
+  height:24px;
+  width:150px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
@@ -333,20 +333,20 @@ span#basic-addon1.income-group-addon {
 }
 
 button#donationButton.btn.btn-primary {
-  background-color: #39c; 
-  border: 0 none; 
-  border-radius:4px; 
-  letter-spacing:.03em; 
-  color: #FFFFFF; 
-  cursor: pointer; 
-  display: inline-block; 
-  height: 24px; 
+  background-color: #39c;
+  border: 0 none;
+  border-radius:4px;
+  letter-spacing:.03em;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  height: 24px;
   width: 100px;
-  line-height: 24px; 
-  text-align: center; 
-  text-decoration: none; 
-  vertical-align: center; 
-  white-space: nowrap; 
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: center;
+  white-space: nowrap;
   transition: all 0.23s ease-in-out 0s;
   margin-left:10px;
 }
@@ -362,14 +362,14 @@ button#donationButton.btn.btn-primary {
 }
 
 #mc_embed_signup form {
-  display:block; 
-  position:relative; 
-  text-align:left; 
+  display:block;
+  position:relative;
+  text-align:left;
   }
 
 #mc_embed_signup input, #donate input {
-  border:1px 
-  solid #999; 
+  border:1px
+  solid #999;
   -webkit-appearance:none;
 }
 
@@ -386,23 +386,23 @@ button#donationButton.btn.btn-primary {
 }
 
 #mc_embed_signup .button{
-  clear:both; 
-  background-color: #39c; 
-  border: 0 none; 
-  border-radius:4px; 
-  letter-spacing:.03em; 
-  color: #FFFFFF; 
-  cursor: pointer; 
-  display: inline-block; 
-  height: 24px; 
-  line-height: 24px; 
-  margin: 0 5px 10px 0; 
-  padding:0; 
-  text-align: center; 
-  text-decoration: none; 
-  vertical-align: top; 
-  white-space: nowrap; 
-  width: auto; 
+  clear:both;
+  background-color: #39c;
+  border: 0 none;
+  border-radius:4px;
+  letter-spacing:.03em;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  margin: 0 5px 10px 0;
+  padding:0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: auto;
   transition: all 0.23s ease-in-out 0s;}
 
 #mc_embed_signup .button:hover{
@@ -415,7 +415,7 @@ button#donationButton.btn.btn-primary {
 
 #mc_embed_signup .nowrap {
   white-space:nowrap;
-}  
+}
 
 #mc_embed_signup .clear {
   clear:none; display:inline;
@@ -425,46 +425,46 @@ button#donationButton.btn.btn-primary {
   color:#39c;
   font-weight:400;
   text-decoration:none;
-  display:block; 
-  padding-bottom:10px; 
+  display:block;
+  padding-bottom:10px;
 }
 
 #mc_embed_signup input.email{
-  display:block; 
-  padding:0 0.4em; 
-  margin:0 4% 10px 0; 
-  min-height:24px; 
-  width:75%; 
-  min-width:130px; 
-  -webkit-border-radius: 3px; 
-  -moz-border-radius: 3px; 
+  display:block;
+  padding:0 0.4em;
+  margin:0 4% 10px 0;
+  min-height:24px;
+  width:75%;
+  min-width:130px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
 #mc_embed_signup input.button {
-  display:block; 
-  width:35%; 
-  margin:0; 
+  display:block;
+  width:35%;
+  margin:0;
   min-width:90px;
 }
 
 #mc_embed_signup div#mce-responses {
-  float:left; 
-  top:-1.4em; 
-  padding:0em .5em 0em .5em; 
-  overflow:hidden; 
-  width:90%; 
-  margin: 0 5%; 
+  float:left;
+  top:-1.4em;
+  padding:0em .5em 0em .5em;
+  overflow:hidden;
+  width:90%;
+  margin: 0 5%;
   clear: both;
 }
 
 #mc_embed_signup div.response {
-  margin:1em 0; 
-  padding:1em .5em .5em 0; 
-  font-weight:bold; 
-  float:left; 
-  top:-1.5em; 
-  z-index:1; 
+  margin:1em 0;
+  padding:1em .5em .5em 0;
+  font-weight:bold;
+  float:left;
+  top:-1.5em;
+  z-index:1;
   width:80%;
 }
 
@@ -473,15 +473,19 @@ button#donationButton.btn.btn-primary {
 }
 
 #mc_embed_signup #mce-success-response {
-  color:#529214; 
+  color:#529214;
   display:none;
 }
 
 #mc_embed_signup label.error {
-  display:block; 
-  float:none; 
-  width:auto; 
-  margin-left:1.05em; 
-  text-align:left; 
+  display:block;
+  float:none;
+  width:auto;
+  margin-left:1.05em;
+  text-align:left;
   padding:.5em 0;
+}
+
+.c-sponsors {
+  margin-top: 48px;
 }
